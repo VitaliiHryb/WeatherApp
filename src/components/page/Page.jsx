@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 // import * as flightsActions from '../../AirportStore/flights.actions';
 import moment from 'moment';
 // import PropTypes from 'prop-types';
+// import styled from 'styled-components';
+import Weather from '../Weather';
 
 function Page() {
   // useEffect(() => {
@@ -12,7 +14,7 @@ function Page() {
 
   return (
     <React.StrictMode>
-      <h1>Weather</h1>
+      <Weather className="weatherBody" />
     </React.StrictMode>
   );
 }
