@@ -1,18 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import weatherIcon from '../images/weather-icon.png';
-import gpsIcon from '../images/gps-icon.png';
+import weatherIcon from '../../images/weather-icon.png';
+import gpsIcon from '../../images/gps-icon.png';
 
 const Container = styled.div`
-  background-size: cover;
+  background: #1e213a;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 375px;
+  width: 100vw;
   height: 810px;
-  margin: 20px;
-  border-bottom: 2px solid white;
+  padding-bottom: 40px;
+`;
+
+const NavContainer = styled.button`
+  display: flex;
+  flex-direction: row;
+  background: #1e213a;
+  justify-content: space-between;
+  width: 100vw;
+  border: none;
 `;
 
 const SearchButton = styled.button`
@@ -23,32 +31,24 @@ const SearchButton = styled.button`
   cursor: pointer;
   width: 161px;
   height: 40px;
-  position: absolute;
-  left: 11px;
-  top: 18px;
-`;
-
-const Icon = styled.img`
-  width: 170px;
-  height: 170px;
-  cursor: pointer;
-  margin-top: 10px;
+  margin-left: 11px;
 `;
 
 const GpsIcon = styled.img`
   width: 40px;
   height: 40px;
-  /* background-color: white; */
-  position: absolute;
-  right: 15px;
-  top: 18px;
+  cursor: pointer;
+  margin-right: 2px;
+`;
+
+const Icon = styled.img`
+  width: 170px;
+  height: 170px;
 `;
 
 const WeatherContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   color: white;
   margin-top: 120px;
@@ -111,9 +111,11 @@ const Celsium = styled.span`
 
 function Weather() {
   return (
-    <Container>
-      <SearchButton>Search for places</SearchButton>
-      <GpsIcon src={gpsIcon} />
+    <Container className="weather-container">
+      <NavContainer>
+        <SearchButton>Search for places</SearchButton>
+        <GpsIcon src={gpsIcon} />
+      </NavContainer>
       <WeatherContainer>
         <Icon src={weatherIcon} />
         <Temperature>

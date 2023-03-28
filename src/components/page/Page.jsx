@@ -1,30 +1,30 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 // import * as flightsActions from '../../AirportStore/flights.actions';
 import moment from 'moment';
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
-import Weather from '../Weather';
+import Weather from '../weather-mobile/Weather';
+import Items from '../weather-mobile/Items';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+`;
 
 function Page() {
-  // useEffect(() => {
-  //   const fakeCurrentDay = moment('2018-12-01');
-  //   fetchFlightsList(moment(fakeCurrentDay));
-  // }, []);
-
   return (
     <React.StrictMode>
-      <Weather className="weatherBody" />
+      <Container className="page-container">
+        <Weather className="weatherBody" />
+        <Items />
+      </Container>
     </React.StrictMode>
   );
 }
 
-// const mapDispatchToProps = {
-//   fetchFlightsList: flightsActions.fetchFlightsList,
-// };
-
 export default Page;
-
-// Page.propTypes = {
-//   fetchFlightsList: PropTypes.func.isRequired,
-// };
