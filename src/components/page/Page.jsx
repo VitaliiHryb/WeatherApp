@@ -7,6 +7,7 @@ import moment from 'moment';
 // import styled from 'styled-components';
 import Weather from '../weather-mobile/Weather';
 import Items from '../weather-mobile/Items';
+import TodaysHighlights from '../weather-mobile/TodaysHighlights';
 
 const Container = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ function Page() {
       <Container className="page-container">
         <Weather className="weatherBody" />
         <Items />
+        <TodaysHighlights />
       </Container>
     </React.StrictMode>
   );

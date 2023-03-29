@@ -14,7 +14,7 @@ const Container = styled.div`
   padding-bottom: 40px;
 `;
 
-const NavContainer = styled.button`
+const NavContainer = styled.div`
   display: flex;
   flex-direction: row;
   background: #1e213a;
