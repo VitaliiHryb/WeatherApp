@@ -25,7 +25,7 @@ const Content = styled.div`
 `;
 
 const Footer = styled.div`
-  margin-top: 20px;
+  margin-top: 35px;
   font-size: 14px;
   text-align: center;
 `;
@@ -35,14 +35,19 @@ const TodaysHighlights = () => {
     <StyledTodaysHighlights>
       <Header>Today's Highlights</Header>
       <Content>
-        <Block header="Wind status" number="7mph" percentage={84} />
-        <Block header="Humidity" number="84%" percentage={84} />
-        <Block header="Visibility" number="6,4 miles" percentage={84} />
-        <Block header="Air Pressure" number="998 mb" percentage={84} />
+        <Block type="wsv" header="Wind status" number="7" unit="mph" />
+        <Block
+          type="percentage"
+          header="Humidity"
+          number="84"
+          unit="%"
+          percentage={84}
+        />
+        <Block type="empty" header="Visibility" number="6,4" unit="miles" />
+        <Block type="empty" header="Air Pressure" number="998" unit="mb" />
       </Content>
-      <Footer>created by username - devChallenges.io</Footer>
+      <Footer>created by VitaliiHryb</Footer>
     </StyledTodaysHighlights>
   );
 };
-
 export default TodaysHighlights;

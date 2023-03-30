@@ -26,7 +26,7 @@ function Button(props) {
   return (
     <StyledButton onClick={onClick}>
       <span style={{ display: 'block', margin: '10px' }}>{text1}</span>
-      <img src={icon} alt="Icon" width="40" height="40" />
+      <img src={icon} alt="Icon" width="50" height="50" />
       <span style={{ display: 'block', marginTop: '25px' }}>{text2}</span>
     </StyledButton>
   );
