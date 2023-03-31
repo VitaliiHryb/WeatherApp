@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import weatherIcon from '../../images/weather-icon.png';
 import gpsIcon from '../../images/gps-icon.png';
+import WeatherNav from './WeatherNav';
 
 const Container = styled.div`
   background: #1e213a;
@@ -110,12 +111,19 @@ const Celsium = styled.span`
 `;
 
 function Weather() {
+  const [showNav, setShowNav] = useState(false);
+
+  const onClose = () => setShowNav(false);
+
   return (
     <Container className="weather-container">
       <NavContainer>
-        <SearchButton>Search for places</SearchButton>
+        <SearchButton onClick={() => setShowNav(true)}>
+          Search for places
+        </SearchButton>
         <GpsIcon src={gpsIcon} />
       </NavContainer>
+      {showNav === true ? <WeatherNav onClose={onClose} /> : <></>}
       <WeatherContainer>
         <Icon src={weatherIcon} />
         <Temperature>
