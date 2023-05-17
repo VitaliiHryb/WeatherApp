@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-// import * as flightsActions from '../../AirportStore/flights.actions';
-import moment from 'moment';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 import Weather from '../weather-mobile/Weather';
 import Items from '../weather-mobile/Items';
 import TodaysHighlights from '../weather-mobile/TodaysHighlights';
@@ -30,3 +25,11 @@ function Page() {
 }
 
 export default Page;
+
+/*
+import { connect } from 'react-redux';
+// import * as flightsActions from '../../AirportStore/flights.actions';
+import moment from 'moment';
+// import PropTypes from 'prop-types';
+// import styled from 'styled-components';
+*/

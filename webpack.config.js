@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   const config = {
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     output: {
       filename: 'bundle.js',
       publicPath: '/',
@@ -14,9 +14,18 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /.(js|jsx?)$/,
+          test: /.(ts|tsx?)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+                '@babel/preset-typescript',
+              ],
+            },
+          },
         },
         {
           test: /.s?css$/,
@@ -37,7 +46,7 @@ module.exports = (env, argv) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx'],
+      extensions: ['.ts', '.tsx', '.js'],
     },
     plugins: [
       new webpack.ProgressPlugin(),

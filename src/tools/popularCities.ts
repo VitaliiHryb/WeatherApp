@@ -1,4 +1,4 @@
-const popularCities = [
+const popularCities: string[] = [
   'Tokyo',
   'Delhi',
   'Shanghai',
