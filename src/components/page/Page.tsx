@@ -1,3 +1,42 @@
+import React from 'react';
+import styled from 'styled-components';
+import Weather from '../weather-mobile/Weather';
+import Items from '../weather-mobile/Items';
+import TodaysHighlights from '../weather-mobile/TodaysHighlights';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
+
+const DesktopWeather = styled(Weather)`
+  @media (min-width: 768px) {
+    width: 459px;
+  }
+`;
+
+function Page() {
+  return (
+    <React.StrictMode>
+      <Container className="page-container">
+        <DesktopWeather className="weatherBody" />
+        <Items />
+        <TodaysHighlights />
+      </Container>
+    </React.StrictMode>
+  );
+}
+
+export default Page;
+
+/*
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Weather from '../weather-mobile/Weather';
@@ -25,11 +64,4 @@ function Page() {
 }
 
 export default Page;
-
-/*
-import { connect } from 'react-redux';
-// import * as flightsActions from '../../AirportStore/flights.actions';
-import moment from 'moment';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 */
